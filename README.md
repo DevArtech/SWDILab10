@@ -1,5 +1,5 @@
 # SWDILab10  
-Software Dev I - Lab 10
+Software Dev I - Lab 10  
 ParkingLot Program (cont.) - District ArrayLists
 
 Assignment:
