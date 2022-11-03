@@ -45,6 +45,13 @@ public class ParkingLot {
     }
 
     /**
+     * Overloading method for ParkingLot
+     * @param capacity Integer (Capacity of parking lot)
+     */
+    public ParkingLot(int capacity) {
+        this.capacity = capacity;
+    }
+    /**
      * Gets the name of the parking lot
      * @return The parking lot name
      */
@@ -80,16 +87,25 @@ public class ParkingLot {
     }
 
     /**
-     * Returns the name of the parking lot, the number of cars in it, and the percentage of occupied space
+     * Returns the name of the parking lot, the number of cars in it,
+     * and the percentage of occupied space
      */
 
     public String toString() {
+        final double roundMultiplier = 10.0;
+        final int truncateMultiplier = 10;
+
         if(getNumberOfSpotsRemaining() == 0) {
-            return "Status for " + name +  " parking lot: " + (int)amountOfCars +
-                    " vehicles (Closed)";
+            return "Status for " + name + " parking lot: " + (int)amountOfCars +
+                    " vehicles (CLOSED)";
+        } else if(((amountOfCars / capacity) * percentMultiplier) % 1 != 0) {
+            return "Status for " + name + " parking lot: " + (int)amountOfCars +
+                    " vehicles (" + Math.round(((amountOfCars / capacity)
+                    * percentMultiplier) * roundMultiplier) / roundMultiplier + "%)";
         } else {
-            return "Status for " + name +  " parking lot: " + (int)amountOfCars +
-                    " vehicles (" + ((amountOfCars / capacity) * percentMultiplier) + "%)";
+            return "Status for " + name + " parking lot: " + (int)amountOfCars +
+                    " vehicles (" + Math.round(((amountOfCars / capacity) *
+                    percentMultiplier) * truncateMultiplier) / truncateMultiplier + "%)";
         }
     }
 

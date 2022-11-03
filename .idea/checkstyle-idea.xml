@@ -5,6 +5,7 @@
     <scanScope>JavaOnly</scanScope>
     <suppressErrors>true</suppressErrors>
     <copyLibs>true</copyLibs>
+    <option name="thirdPartyClasspath" />
     <option name="activeLocationIds">
       <option value="a6146e1f-5cf9-4b70-893e-33cc3aa722d2" />
     </option>
