@@ -16,8 +16,7 @@ import java.util.ArrayList;
  */
 public class District {
 
-    ArrayList<ParkingLot> lots = new ArrayList<ParkingLot>();
-    int numLots = 0;
+    ArrayList<ParkingLot> lots = new ArrayList<>();
     int timeAllClosed = 0;
     int timeReopened = 0;
 
@@ -54,11 +53,11 @@ public class District {
      * @see ParkingLot#toString() for the format for each.
      */
     public String toString() {
-        String collective = "District Status: ";
+        StringBuilder collective = new StringBuilder("District status:\n");
         for (ParkingLot lot : lots) {
-            collective = collective + "\n" + lot.toString();
+            collective.append("  ").append(lot.toString()).append("\n");
         }
-        return collective;
+        return collective.toString();
     }
 
     /**
